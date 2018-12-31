@@ -55,10 +55,4 @@ return [
     */
     'prefix' => '',
 
-    /*
-     * what to exclude from the output file
-     * ex. ['action', 'methods', 'host']
-     */
-    'exclude' => ['action'],
-
 ];
