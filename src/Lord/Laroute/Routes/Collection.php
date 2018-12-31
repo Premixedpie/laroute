@@ -60,13 +60,13 @@ class Collection extends \Illuminate\Support\Collection
         $action  = $route->getActionName();
         $laroute = array_get($route->getAction(), 'laroute', true);
 
-        if ($laroute === false) {
+        if ($laroute === false || (!empty(\Config::get('laroute::config.whitelist_actions')) && !in_array($action, \Config::get('laroute::config.whitelist_actions'))) ) {
             return null;
         }
 
         $items = ['host', 'methods', 'uri', 'action', 'name'];
         
-        return compact(array_diff($items, config('laroute.exclude')));
+        return compact($items);
     }
 
 }
