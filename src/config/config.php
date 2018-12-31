@@ -25,4 +25,9 @@ return array(
      */
     'template' => 'vendor/lord/laroute/src/Lord/Laroute/templates/laroute.min.js',
 
+    /*
+     * what to exclude from the output file
+     * ex. ['action', 'methods', 'host']
+     */
+    'exclude' => ['action'],
 );
